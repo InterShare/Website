@@ -10,6 +10,7 @@ body .main {
 body footer {
   text-align: center;
   opacity: 0.6;
+  font-size: 0.7em;
 }
 body footer p {
   margin: 0;
@@ -31,11 +32,11 @@ body footer p {
 }
 .startSection .preReleaseTag {
   margin: 0;
-  background: #FF7043;
+  background: #ff9800;
   display: inline-block;
   padding: 5px 10px 5px 10px;
   border-radius: 13px;
-  color: white;
+  color: #000000;
   font-size: 0.8em;
 }
 .startSection .description {
@@ -87,8 +88,9 @@ button:active, .button:active {
 section.downloads {
   margin-top: 30px;
 }
-section.downloads h3 {
-  margin-bottom: 0;
+section.downloads .downloadForLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 section.downloads .buttons {
   display: flex;
@@ -103,8 +105,15 @@ section.downloads .buttons .button {
   min-width: 150px;
 }
 section.downloads .buttons .button p {
-  margin-left: 10px;
+  margin: 5px 0 5px 10px;
   font-weight: bold;
+}
+section.downloads .buttons .button p .version {
+  display: block;
+  opacity: 0.6;
+  font-size: 0.6em;
+  text-align: left;
+  margin-left: 2px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -115,7 +124,11 @@ section.downloads .buttons .button p {
   section.downloads .buttons {
     flex-direction: column;
   }
-  section.downloads .buttons button {
+  section.downloads .buttons a.button {
     margin: 5px 0px 5px 0px;
+  }
+  section.downloads .buttons a.button .version {
+    text-align: center;
+    margin-left: 0;
   }
 }

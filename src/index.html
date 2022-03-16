@@ -6,41 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A simple cross-platform App to share files between devices.">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>InterShare</title>
 </head>
 <body>
     <section class="main">
-        <a class="button github" href="https://github.com/InterShare">
-            <img width="70px" src="assets/images/GitHub-Logo.png" alt="">
+        <a class="button github" href="https://github.com/InterShare" alt="GitHub">
+            <img width="70px" src="assets/images/GitHub-Logo.webp" alt="">
         </a>
         <div class="startSection">
-            <img width="100px" height="100px" src="assets/images/logo.png" alt="">
+            <img width="100px" height="100px" src="assets/images/logo.webp" alt="">
             <h1>InterShare</h1>
             <p class="preReleaseTag">Pre-Release</p>
             <p class="description">A simple and easy to use cross-platform app to share files between devices.</p>
 
             <div class="screenshots">
-                <img height="300px" class="linux" src="assets/images/linux-screenshot.png" alt="">
-                <img height="350px" class="mac" src="assets/images/mac-screenshot.png" alt="">
-                <img height="300px" class="windows" src="assets/images/windows-screenshot.png" alt="">
+                <img height="300px" class="linux" src="assets/images/linux-screenshot.webp" alt="">
+                <img height="350px" class="mac" src="assets/images/mac-screenshot.webp" alt="">
+                <img height="300px" class="windows" src="assets/images/windows-screenshot.webp" alt="">
             </div>
 
             <section class="downloads">
-                <h3>Download for:</h3>
+                <p class="downloadForLabel">Download for:</p>
                 <div class="buttons">
                     <a class="button" href="downloads/linux-binary/InterShare.tar.gz">
                         <img height="30px" src="assets/images/linux-logo.svg" alt="">
-                        <p>Linux</p>
+                        <p>
+                            Linux
+                            <span class="version" id="linuxVersion">unknown</span>
+                        </p>
                     </a>
 
                     <a class="button" href="downloads/macOS/InterShare.zip">
                         <img height="30px" src="assets/images/macOS-logo.svg" alt="">
-                        <p>macOS</p>
+                        <p>
+                            macOS
+                            <span class="version" id="macVersion">unknown</span>
+                        </p>
                     </a>
 
                     <a class="button" href="downloads/windows/InterShare.exe">
                         <img height="30px" src="assets/images/windows-logo.svg" alt="">
-                        <p>Windows</p>
+                        <p>
+                            Windows
+                            <span class="version" id="windowsVersion">unknown</span>
+                        </p>
                     </a>
                 </div>
 
@@ -58,5 +68,7 @@
     <footer>
         <p>Author: Julian Baumann</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

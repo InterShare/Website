@@ -11,6 +11,7 @@ body {
     footer {
         text-align: center;
         opacity: 0.6;
+        font-size: 0.7em;
 
         p {
             margin: 0;
@@ -35,11 +36,11 @@ body {
 
     .preReleaseTag {
         margin: 0;
-        background: #FF7043;
+        background: #ff9800;
         display: inline-block;
         padding: 5px 10px 5px 10px;
         border-radius: 13px;
-        color: white;
+        color: #000000;
         font-size: 0.8em;
     }
 
@@ -99,8 +100,9 @@ button, .button {
 section.downloads {
     margin-top: 30px;
 
-    h3 {
-        margin-bottom: 0;
+    .downloadForLabel {
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     .buttons {
@@ -116,8 +118,16 @@ section.downloads {
             min-width: 150px;
 
             p {
-                margin-left: 10px;
+                margin: 5px 0 5px 10px;
                 font-weight: bold;
+
+                .version {
+                    display: block;
+                    opacity: 0.6;
+                    font-size: 0.6em;
+                    text-align: left;
+                    margin-left: 2px;
+                }
             }
         }
     }
@@ -135,8 +145,13 @@ section.downloads {
         .buttons {
             flex-direction: column;
 
-            button {
+            a.button {
                 margin: 5px 0px 5px 0px;
+
+                .version {
+                    text-align: center;
+                    margin-left: 0;
+                }
             }
         }
     }

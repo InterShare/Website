@@ -14,9 +14,9 @@ async function setDesktopVersionLabels() {
         macVersionElement.innerHTML = json["macOS"];
         windowsVersionElement.innerHTML = json["windows"];
 
-        linuxDownloadButton.href = `downloads/linux-binary/InterShare-${json["linux"]}.tar.gz`;
-        macDownloadButton.href = `downloads/macOS/InterShare-${json["macOS"]}.zip`;
-        windowsDownloadButton.href = `downloads/windows/InterShare-${json["windows"]}.zip`;
+        linuxDownloadButton.href = `downloads/linux-binary/InterShare.Linux-${json["linux"]}.tar.gz`;
+        macDownloadButton.href = `downloads/macOS/InterShare.macOS-${json["macOS"]}.zip`;
+        windowsDownloadButton.href = `downloads/windows/InterShare.Windows-${json["windows"]}.zip`;
     }
 }
 

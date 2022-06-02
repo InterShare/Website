@@ -11,62 +11,129 @@
 </head>
 <body>
     <section class="main">
-        <a class="button github" href="https://github.com/InterShare" alt="GitHub">
-            <img width="70px" src="assets/images/GitHub-Logo.webp" alt="">
-        </a>
-        <div class="startSection">
-            <img width="100px" height="100px" src="assets/images/logo.webp" alt="">
-            <h1>InterShare</h1>
-            <p class="preReleaseTag">Pre-Release</p>
-            <p class="description">A simple and easy to use cross-platform app to share files between devices.</p>
+        <img width="130px" height="130px" src="assets/images/logo.webp" alt="">
+        <h1>InterShare</h1>
+        <p class="description">
+            A simple and easy to use cross-platform app to share files between devices. While it sends the data over a network connection,
+            it does not require any internet connection. Data is transferred directly from one device to another.
+        </p>
 
-            <div class="screenshots">
-                <img height="300px" class="linux" src="assets/images/linux-screenshot.webp" alt="">
-                <img height="350px" class="mac" src="assets/images/mac-screenshot.webp" alt="">
-                <img height="300px" class="windows" src="assets/images/windows-screenshot.webp" alt="">
+        <br />
+
+        <a href="#downloads"><img src="assets/images/download.webp" alt=""> Download</a>
+        <a href="https://github.com/InterShare"><img src="assets/images/code.webp" alt=""> Source Code</a>
+    </section>
+
+    <div class="notice">
+        <h3>Important</h3>
+        <p>
+            This is a very early pre-release version. Things may change drastically and may not be backwards compatible.
+            Check the website regularly for new updates.
+        </p>
+    </div>
+
+    <hr />
+
+    <section class="features">
+        <div class="feature-section">
+            <img src="assets/images/lock.webp" alt="">
+            <div class="text">
+                <h3>Secure</h3>
+                <p>
+                    Before the data is sent, InterShare establishes a secure connection between the devices.
+                    This ensures that the sent data is only accessible to the rightful recipient.
+                </p>
             </div>
+        </div>
 
-            <section class="downloads">
-                <p class="downloadForLabel">Download for:</p>
-                <div class="buttons">
-                    <a class="button" id="linuxDownloadButton">
-                        <img height="30px" src="assets/images/linux-logo.svg" alt="">
-                        <p>
-                            Linux
-                            <span class="version" id="linuxVersion">unknown</span>
-                        </p>
-                    </a>
+        <div class="feature-section">
+            <img src="assets/images/accessibility.webp" alt="">
+            <div class="text">
+                <h3>Portable</h3>
+                <p>
+                    InterShare was designed from the beginning to be a fast tool that requires no installation or configuration.
+                    Just download the program and you're ready to go.
+                </p>
+            </div>
+        </div>
 
-                    <a class="button" id="macDownloadButton">
-                        <img height="30px" src="assets/images/macOS-logo.svg" alt="">
-                        <p>
-                            macOS
-                            <span class="version" id="macVersion">unknown</span>
-                        </p>
-                    </a>
+        <div class="feature-section">
+            <img src="assets/images/no-cellular.webp" alt="">
+            <div class="text">
+                <h3>No Internet</h3>
+                <p>
+                    While a network connection is needed to transfer the data, it doesn't have to be connected to the internet.
+                    You can even use your mobile data for transfer without spending any cellular data.
+                </p>
+            </div>
+        </div>
 
-                    <a class="button" id="windowsDownloadButton">
-                        <img height="30px" src="assets/images/windows-logo.svg" alt="">
-                        <p>
-                            Windows
-                            <span class="version" id="windowsVersion">unknown</span>
-                        </p>
-                    </a>
-                </div>
-
-                <div class="note">
-                    <p>This is a pre-release software. Things may change drastically</p>
-                </div>
-
-                <div class="note">
-                    <p>iOS and Android versions are in the works and available very soon.</p>
-                </div>
-            </section>
+        <div class="feature-section">
+            <img src="assets/images/phone-computer.webp" alt="">
+            <div class="text">
+                <h3>Cross-Platform</h3>
+                <p>
+                    InterShare is available on every major platform. Linux, Windows, macOS, iOS and Android.
+                </p>
+            </div>
         </div>
     </section>
 
+    <hr />
+
+    <section id="downloads">
+        <h2>Downloads</h2>
+
+        <a href="https://github.com/InterShare/Desktop/releases">
+            <img src="assets/images/download.webp" alt="">
+            <div class="text">
+                <h3>Linux</h3>
+                <p>Linux binary</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/InterShare/Desktop/releases">
+            <img src="assets/images/download.webp" alt="">
+            <div class="text">
+                <h3>macOS</h3>
+                <p>Universal binary for intel and M1 macs</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/InterShare/Desktop/releases">
+            <img src="assets/images/download.webp" alt="">
+            <div class="text">
+                <h3>Windows</h3>
+                <p>Portable EXE</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/InterShare/MobileApp/releases/">
+            <img src="assets/images/download.webp" alt="">
+            <div class="text">
+                <h3>iOS</h3>
+                <p>Available through TestFlight. Versions may be delayed.</p>
+            </div>
+        </a>
+
+        <a href="https://github.com/InterShare/MobileApp/releases/">
+            <img src="assets/images/download.webp" alt="">
+            <div class="text">
+                <h3>Android</h3>
+                <p>Available as APK</p>
+            </div>
+        </a>
+    </section>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
     <footer>
-        <p>Author: Julian Baumann</p>
+        <p>Copyright © 2022, Julian Baumann</p>
+        <a href="https://julian-baumann.com">julian-baumann.com</a>
     </footer>
 
     <script src="script.js"></script>

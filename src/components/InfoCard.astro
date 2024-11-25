@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+const { href, class: className, ...props } = Astro.props;
+
+const { imageSrc, stepNumber } = Astro.props;
+---
+
+<div>
+    <slot name="title" />
+    <slot name="content" />
+</div>
+<style>
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+    a.active {
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+</style>

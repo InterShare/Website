@@ -1,0 +1,481 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import InfoCard from "../components/InfoCard.astro";
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style lang="scss">
+        body {
+            /*background: url(/background.png) 50% no-repeat;*/
+            /*background-size: cover;*/
+        }
+        main {
+            text-align: center;
+            width: 1200px;
+            max-width: calc(100% - 2em);
+        }
+
+        .phones {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 60px 0;
+        }
+
+        .phone-container {
+            position: relative;
+            max-width: 300px;
+            margin: 10px;
+            width: 100%;
+
+            .iphone-frame {
+                width: 100%;
+                display: block;
+            }
+
+            .android-frame {
+                width: 100%;
+                display: block;
+            }
+
+            video {
+                position: absolute;
+                top: 2%;
+                left: 5%;
+                width: 90%;
+                object-fit: contain;
+                z-index: -1;
+                border-radius: 8%;
+            }
+
+            .android-video {
+                width: 89%;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .gradient {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            // transform: translate(-50%, -50%);
+
+            --size: 50vw;
+            --speed: 50s;
+            --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+            width: var(--size);
+            height: var(--size);
+
+            max-width: 600px;
+            max-height: 600px;
+            filter: blur(calc(var(--size) / 5));
+            background-image: linear-gradient(hsl(222, 84, 60, 100%), hsl(164, 79, 71));
+            animation: rotate var(--speed) var(--easing) alternate infinite;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: -3;
+        }
+
+        a {
+            /*margin: 0 10px;*/
+        }
+
+        .main {
+            text-align: center;
+            margin-top: 50px;
+
+
+            h1 {
+                margin-bottom: 0;
+                margin-top: 10px;
+                font-size: 2em;
+            }
+
+            .preReleaseTag {
+                margin: 0;
+                background: #ff9800;
+                display: inline-block;
+                padding: 5px 10px 5px 10px;
+                border-radius: 13px;
+                color: #000000;
+                font-size: 0.8em;
+            }
+
+            .description {
+                opacity: 0.6;
+                font-size: 1.2em;
+            }
+
+            .screenshots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+
+                .mac {
+                    transform: translateY(10px);
+                }
+            }
+        }
+
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .beta-flag {
+            background: #ff9800;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 0.5em;
+            margin-left: 5px;
+        }
+
+        .notice {
+            margin-top: 50px;
+            background: #e7a43f90;
+            border-radius: 16px;
+            padding: 15px;
+
+            h3, p {
+                margin: 0;
+            }
+
+            p {
+                margin-top: 10px;
+            }
+        }
+
+        button, .button {
+            border: none;
+            border-radius: 14px;
+            background: #4F86F6;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 0.8em;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:active {
+                opacity: 0.5;
+            }
+
+            img {
+                // height: 1.2em;
+                vertical-align: middle;
+                margin-bottom: 2px;
+            }
+        }
+
+        hr {
+            margin: 50px 0;
+        }
+
+        hr {
+            border: 1px solid #7c7c7c;
+            border-radius: 10px;
+        }
+
+        .downloads {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            h3 {
+                margin: 0;
+                padding: 20px 0;
+                opacity: 0.7;
+            }
+
+            .mobile, .desktop {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            a {
+                text-align: left;
+                border: 1px solid #4F86F6;
+                display: flex;
+                margin-bottom: 15px;
+                width: 250px;
+                padding: 10px;
+                border-radius: 20px;
+                font-size: 0.9em;
+
+                img {
+                    max-width: 30px;
+                    max-height: 30px;
+                    margin-top: 4px;
+                    margin-right: 5px;
+                }
+
+                h4, p {
+                    margin: 0;
+                }
+
+                p {
+                    font-size: 0.7em;
+                    color: #6c6c6c;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .connections {
+            position: relative;
+            width: 100px;
+            margin: 0px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .connection-icon {
+                height: 70px;
+                width: 70px;
+                top: 0;
+                left: 0;
+                background: #4f7ddf;
+                padding: 10px;
+                border-radius: 300px;
+                box-shadow: 0 0 25px 15px rgba(32, 32, 32, 0.2);
+
+                &.wifi {
+                    margin-left: -20%;
+                    background: #68bd6f;
+                }
+
+                &.network {
+                    background: #68bd6f;
+                }
+
+                &.encryption {
+                    background: #68bd6f;
+                }
+            }
+        }
+
+        hr {
+            margin: 50px 0;
+        }
+
+        .note {
+            opacity: 0.6;
+        }
+
+        .card {
+            border: 2px solid var(--card-background);
+            padding: 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+        }
+
+        .align-next {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+            .card {
+                flex: 1 1 calc(50% - 20px); /* Ensures cards take half width with a gap */
+                box-sizing: border-box;
+                margin-bottom: 0;
+            }
+        }
+
+        #downloads {
+            margin-top: 100px;
+
+            a {
+                font-size: 1em;
+            }
+        }
+
+        @media only screen and (max-width: 760px) {
+            .main {
+                .description {
+                    font-size: 1em;
+                }
+            }
+
+            .align-next {
+                .card {
+                    flex: 1 1 100%;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+<Header />
+<main>
+    <img width="130" height="130" src="/logo.png" alt="">
+    <h1>InterShare <span class="beta-flag">Beta</span></h1>
+    <p class="description">
+        InterShare revolutionizes the way you share files, bringing seamless, secure, and instant transfer capabilities to all your devices. Whether you're using iOS, Android, macOS or Windows, InterShare allows you to share any file, photo, or video with just a few taps—no wires, no hassle.
+    </p>
+
+    <a class="button" href="#downloads">Download Beta</a>
+
+    <br />
+
+    <div class="phones">
+        <div class="gradient"></div>
+        <div class="phone-container iphone">
+            <img src="/iphone-frame.png" alt="iPhone Frame" class="iphone-frame">
+
+            <video id="main-video" width="400" playsinline autoplay muted loop>
+                <source src="/ios-light.webm" type="video/webm">
+            </video>
+        </div>
+
+        <div class="phone-container android">
+            <img src="/android-frame.png" alt="Android Frame" class="android-frame">
+
+            <video id="synced-video" class="android-video" width="400" playsinline autoplay muted loop>
+                <source src="/android-light.webm" type="video/webm">
+            </video>
+        </div>
+    </div>
+
+    <section class="card">
+        <div class="connections">
+            <img class="connection-icon ble" src="/bluetooth.svg" height="70" width="70">
+            <img class="connection-icon wifi" src="/wifi.svg" height="70" width="70">
+        </div>
+
+        <h2>How InterShare works</h2>
+
+        <p>
+            InterShare uses both Bluetooth Low Energy and Wi-Fi to provide you with a seamless experience.
+        </p>
+        <p>
+            InterShare discovers nearby devices using Bluetooth. This offers a reliable method for discovering devices, unlike Wi-Fi discovery,
+            which may depend on the configuration of the Wi-Fi network.
+        </p>
+        <p>
+            Since transferring files via Bluetooth is <b>very, very slow</b>, InterShare intelligently determines if both devices are on the same
+            Wi-Fi network. If they are, InterShare will send the files via this Wi-Fi network. When they are not on the same Wi-Fi, InterShare will
+            transfer the files via Bluetooth. While this method is much slower, it ensures you can still share small files when connecting
+            to a Wi-Fi network is not an option.
+        </p>
+    </section>
+
+    <div class="align-next">
+        <section class="card">
+            <img src="/no-network.svg" height="70" width="70">
+
+            <h2>No internet needed</h2>
+
+            <p>
+                While InterShare may use your Wi-Fi connection, it uses <b>no internet connection at all.</b>
+            </p>
+            <p>
+                InterShare only establishes a connection between the devices and sends your files only via this local connection.
+                You could also connect both devices to your personal Hotspot without spending byte on your cellular plan.
+            </p>
+        </section>
+
+        <section class="card">
+            <img src="/lock.svg" height="80" width="80">
+            <h2>Secure by Design</h2>
+            <p>
+                InterShare establishes a secure connection between devices, ensuring that data is accessible only to the rightful recipient.
+                InterShare also collects <b>no data</b> about you, the files transferred, or <b>anything else</b>.
+            </p>
+            <p class="note">
+                <b>Please note</b> that I am a single individual developer. InterShare has not yet been audited by any independent security professionals.
+            </p>
+        </section>
+    </div>
+
+    <!--<section class="card">-->
+    <!--    <img src="/cross-platform.svg" height="90" width="90">-->
+    <!--    <h2>Works everywhere</h2>-->
+    <!--    <p>-->
+    <!--        InterShare is available on iOS, Android, Windows and macOS, making it accessible on every major platform.-->
+    <!--    </p>-->
+    <!--    <p class="note">-->
+    <!--        Linux support is planned.-->
+    <!--    </p>-->
+    <!--</section>-->
+
+    <section id="downloads">
+        <h2>Download the Beta today</h2>
+        <p>
+            While InterShare is not yet publicly released, you can already download a beta version. <br />
+            <span class="note">
+                Windows is currently in its Alpha stage, so some features may not work yet or may seem unreliable.
+See the <a href="/docs/windows">Windows documentation</a> for more information.
+            </span>
+        </p>
+
+        <div class="downloads">
+            <div class="mobile">
+                <h3>Download for iOS & Android</h3>
+
+                <a href="https://testflight.apple.com/join/ZKRG9ojI">
+                    <img src="/download.webp" alt="">
+                    <div class="text">
+                        <h4>iOS (Beta)</h4>
+                        <p>Available through TestFlight</p>
+                    </div>
+                </a>
+
+                <a href="/InterShare.apk">
+                    <img src="/download.webp" alt="">
+                    <div class="text">
+                        <h4>Android (Beta)</h4>
+                        <p>Available as APK</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="desktop">
+                <h3>Download for macOS & Windows</h3>
+
+                <a href="/windows-download/InterShare-win-Setup.exe">
+                    <img src="/download.webp" alt="">
+                    <div class="text">
+                        <h4>Windows (Alpha)</h4>
+                        <p>Available as .exe</p>
+                    </div>
+                </a>
+
+                <a href="https://testflight.apple.com/join/ZKRG9ojI">
+                    <img src="/download.webp" alt="">
+                    <div class="text">
+                        <h4>macOS (Beta)</h4>
+                        <p>Available through TestFlight</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<Footer />
+</body>
+</html>

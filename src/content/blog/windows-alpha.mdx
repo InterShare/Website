@@ -1,0 +1,51 @@
+---
+title: "Windows Alpha!"
+description: "A alpha version of InterShare for Windows"
+pubDate: "2024-11-23"
+heroImage: "/blog/windows-alpha/blog-windows.png"
+---
+
+![blog placeholder](/blog/windows-alpha/windows-start.png)
+
+I am excited to announce that, starting today, the initial Alpha version of InterShare for Windows is publicly available!
+
+Thank you to **Jakob Bauer** and **Paul Hüfner** for their work in building the initial platform support for Windows.
+
+In this early version, InterShare for Windows supports file transfers only when both devices are on the same Wi-Fi network.
+Your Windows PC still requires Bluetooth to be turned on, as the discovery of nearby devices currently relies on Bluetooth.
+
+# Bluetooth on Windows: A Tragedy
+
+I didn’t anticipate that implementing Bluetooth on Windows would be such a disappointment. First, device discovery is notoriously unreliable.
+Even more frustrating is the fact that Windows doesn’t fully support the L2CAP Bluetooth Low Energy (BLE) standard. Well, not entirely.
+
+Bluetooth Low Energy (BLE) is designed for transmitting small data packets. However, the L2CAP protocol allows for sending larger chunks of data bidirectionally.
+This is significant because using standard BLE for such transfers is highly impractical. L2CAP is natively supported on iOS, macOS, and Android, which is why InterShare
+leverages this protocol to establish direct BLE connections between devices.
+
+Unfortunately, Windows offers very limited support for this functionality. While basic BLE discovery works—since it doesn’t require the advanced L2CAP standard—file
+transfers using BLE are not possible on Windows.
+
+I am actively working on a workaround. Until then, file transfers on Windows are restricted to devices connected to the same local network.
+
+# But Now to the Functioning Parts
+
+## Sending Files on Windows
+
+![Share files on Windows](/blog/windows-alpha/windows-send.png)
+
+Works as expected—just drag some files into the marked area and select a recipient. Voilà!
+
+## Receiving Files on Windows
+
+To receive files on Windows, simply open the InterShare app and leave it open on the start page. When someone sends you a file,
+you will see a notification in the bottom-right corner.
+
+<video controls muted playsinline>
+    <source src="/blog/windows-alpha/windows-receiving.mp4" type="video/mp4"></source>
+</video>
+
+# Notes
+
+This is an early Alpha version, so there may be a few bugs beyond the ones already mentioned. I am also continuously working on improving the
+discovery process on Windows to make it more reliable.

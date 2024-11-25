@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import EmbeddedDocEntry from "../../layouts/EmbeddedDocEntry.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("docs");
+    return posts.map((post) => ({
+        params: { slug: post.slug },
+        props: post,
+    }));
+}
+type Props = CollectionEntry<"docs">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<EmbeddedDocEntry {...post.data}>
+    <Content />
+</EmbeddedDocEntry>

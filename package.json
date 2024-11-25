@@ -1,0 +1,31 @@
+{
+  "name": "website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
+    "@stylistic/eslint-plugin-ts": "^2.10.1",
+    "@typescript-eslint/eslint-plugin": "8.13.0",
+    "@typescript-eslint/eslint-plugin-tslint": "7.0.2",
+    "@typescript-eslint/parser": "8.13.0",
+    "astro": "^4.16.13",
+    "eslint": "9.14.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-jsdoc": "50.4.3",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "globals": "^15.12.0",
+    "sass": "^1.81.0",
+    "typescript": "^5.7.2"
+  }
+}
